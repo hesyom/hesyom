@@ -3,39 +3,66 @@
 
 int main()
 {
+ char op;
+printf("lutfen operator giriniz\n");
+scanf("%c",&op);
 
-   /* kullsnıcıdan bir sayi isteyiniz 1 den girdiğiniz sayiya kadar olan sayıların
-   toplamını for döngüyle hesaplayınız
+float x;
+float y;
+printf("lutfen iki adet sayi giriniz\n");
+scanf("%f %f",&x,&y);
 
-
-   int i;
-
-for(i=1;i<=5;i++);
-printf("%d",i); */
-
-int i;
-int sayim;
-int toplam=0;
-
-printf("lutfen bir sayi giriniz\n");
-scanf("%d",&sayim);
-
-
-for(i=1;i<=sayim;i++)
+switch(op)
 {
-    toplam+=i;
+  case '+':printf("%.2f+%.2f=%.2f",x,y,x+y);
+
+  break;
+
+  case'-':printf("%.2f-%.2f=%.2f",x,y,x-y);
+  break;
+
+
+
+    case'*':printf("%.2f*%.2f=%.2f",x,y,x*y);
+  break;
+
+    case'/':printf("%.2f/%.2f=%.2f",x,y,x/y);
+  break;
+default:printf("hatali giris yaptiniz");
+
+
+  char op;
+    printf("lutfen bir adet operator giriniz");
+    scanf("%c",&op);
+
+
+
+
 }
-printf("sonuc:%d",toplam);
-
-
-
-
-
-return 0;
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
 }
