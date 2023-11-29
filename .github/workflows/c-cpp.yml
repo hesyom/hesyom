@@ -1,0 +1,95 @@
+#include <stdio.h>     //bankamatik makinesi kodu
+#include <stdlib.h>
+
+int main () {
+
+int balance=2000; //bakiye
+int result;
+int comission=10;//%10 komisyon tutarı
+
+printf("C atm sine hosgeldiniz\n");
+printf("lutfen yapmak istedediginiz islemi secin\n");
+printf("1--bakiye yukleme\n");
+printf("2--para cekme\n");
+printf("3--para transfer cekme\n");
+printf("****************************\n");
+
+int procces1;
+scanf("%d",&procces1);
+
+if(procces1==1)
+{
+   printf("yuklemek istediginiz miktari giriniz");
+
+   int push;
+   scanf("%d",&push);
+
+   if(push==0)
+   {
+       printf("gecersiz miktar!");
+   }
+   else if(push%10==0)
+   {
+       result=balance+push;
+     printf("yeni bakiyeniz:%d\n",result);
+    }
+
+    else if(push%10!=0)
+{
+    printf("girilen tutar 10'un kati olmalidir");
+}
+else
+{
+    printf("gecersiz birislem");
+}
+}
+else if(procces1==2)
+{ printf("lutfen cekmek istediginiz miktari giriniz");
+    int pull;
+    scanf("%d",&pull);
+
+    if(balance<pull)
+    {
+        printf("yetersiz bakiye");
+    }
+    else if(pull==0)
+    {
+        printf("gecersiz miktar");
+    }
+    else
+    {
+       result=balance-pull;
+    printf("yeni bakiyeniz:%d",result);
+
+    }
+}
+
+else if(procces1==3)
+{
+  printf("transfer etmek istediginiz miktari giriniz");
+  int ammount;
+  scanf("%d",&ammount);
+   if(balance<ammount)
+    {
+        printf("yetersiz bakiye");
+    }
+    else if(ammount==0)
+    {
+        printf("gecersiz bakiye");
+    }
+    else if(ammount>=1000)
+    {
+  printf("gunluk transfer limitiniz 999'dur");
+    }
+    else
+    {
+      int temp;
+      temp=ammount/comission;
+    result=balance-temp;
+ printf("yeni bakiyeniz:%d",result);
+ }
+}
+
+
+
+
